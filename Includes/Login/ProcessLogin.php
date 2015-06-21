@@ -7,20 +7,20 @@
  sec_session_start();
 
  if(isset($_POST['email'], $_POST['p'])) {
- $email=$_POST['email'];
- $password=$_POST['p']; // The hashed password.
+     $email=$_POST['email'];
+     $password=$_POST['p']; // The hashed password.
 
- if(login($email, $password, $conn)==true) {
- // Login success
- header('Location: /Index.php');
+     if(login($email, $password, $conn)==true) {
+         // Login success
+         header('Location: /Index.php');
+     }
+     else {
+         // Login failed
+         //return 'Incorrect username or password.';
+         header('Location: /index.php?error=1');
+     }
  }
  else {
- // Login failed
- //return 'Incorrect username or password.';
- header('Location: /index.php?error=1');
- }
- }
- else {
- // The correct POST variables were not sent to this page.
- echo 'Invalid Request';
+     // The correct POST variables were not sent to this page.
+     echo 'Invalid Request';
  }

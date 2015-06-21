@@ -130,8 +130,8 @@
                  // Password is not correct
                  // We record this attempt in the database
                  $now=time();
-                 $conn->Insert("INSERT INTO hanoncs_SecureLogin.Hanoncs_Hanoncs.loginattempts(userid, time)
-                                    VALUES ('$user_id', '$now')");
+                 //$conn->Insert("INSERT INTO hanoncs_SecureLogin.Hanoncs_Hanoncs.loginattempts(userid, time)
+                 //                 VALUES ('$user_id', '$now')");
                  return false;
              }
          }
