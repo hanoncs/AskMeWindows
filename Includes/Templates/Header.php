@@ -1,4 +1,5 @@
 <?php
+ $path=$_SERVER['DOCUMENT_ROOT'];
  include_once $path.'/includes/login/SessionStart.php';
  sec_session_start();
  require $path.'/includes/mail/PHPMailerAutoload.php';
@@ -6,6 +7,8 @@
 
 
 
+
+ include_once $path.'/includes/Login/Register.inc.php';
 
  //Create logged var, will be 'in' if logged in or 'out' if logged out.
  if(login_check($conn)==true) {
@@ -62,7 +65,7 @@
                                 <h2>Login</h2>
 
                                 <div class="form-style form-style-3">
-                                    <form action="includes/login/processlogin.php" method="post" name="login_form">
+                                    <form action="includes/login/processlogin.php" method="post" name="login_form" id="login_form">
 
                                         <!--  TODO ADD TABINDEX TO LOGIN FORM-->
                                         <div class="form-inputs clearfix">
@@ -86,11 +89,17 @@
                                         </div>
                                         <?PHP
                                          if(isset($_GET['error'])) {
-                                             echo '<p class="error">Your password or username was not incorrect, please try again.</p>';
+                                             echo'<div class="alert-message error">
+						        <i class="icon-flag"></i>
+						        <p><span>Error.</span><br>
+						        Your password or username was not incorrect, please try again.</p>
+						    </div>';
+                                             //echo '<p class="error">Your password or username was not incorrect, please try again.</p>';
                                          }
                                         ?>
                                         <p class="form-submit login-submit">
-                                            <input type="button" value="Log in" onclick="formhash(this.form, this.form.password);" class="button color small login-submit submit">
+                                            <input id="sub" type="button" value="Log in" onclick="formhash(this.form, this.form.password);" class="button color small login-submit submit">
+
                                         </p>
                                         <div class="rememberme">
                                             <label><input type="checkbox" checked="checked"> Remember Me</label>
@@ -114,27 +123,38 @@
             <div class="panel-pop" id="signup">
                 <h2>Register Now<i class="icon-remove"></i></h2>
                 <div class="form-style form-style-3">
-                    <form>
+                    <!--                    <form>-->
+                    <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>" method="post" role="form" name="registration_form">
                         <div class="form-inputs clearfix">
                             <p>
                                 <label class="required">Username<span>*</span></label>
-                                <input type="text">
+<!--                                <input type="text">-->
+                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                             </p>
                             <p>
                                 <label class="required">E-Mail<span>*</span></label>
-                                <input type="email">
+<!--                                <input type="email">-->
+                                <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
                             </p>
                             <p>
                                 <label class="required">Password<span>*</span></label>
-                                <input type="password" value="">
+<!--                                <input type="password" value="">-->
+                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
                             </p>
                             <p>
                                 <label class="required">Confirm Password<span>*</span></label>
-                                <input type="password" value="">
+<!--                                <input type="password" value="">-->
+                                <input type="password" name="confirmpwd" id="confirmpwd" tabindex="2" class="form-control" placeholder="Confirm Password">
                             </p>
                         </div>
                         <p class="form-submit">
-                            <input type="submit" value="Signup" class="button color small submit">
+<!--                            <input type="submit" value="Signup" class="button color small submit">-->
+                            <input tabindex="4" class="button color small submit"
+                                   type="button" value="Register" onclick="return regformhash(this.form,
+                                                   this.form.username,
+                                                   this.form.email,
+                                                   this.form.password,
+                                                   this.form.confirmpwd);">
                         </p>
                     </form>
                 </div>
@@ -181,6 +201,7 @@
                              <?php else : ?>
                                  <li><a href="#" class="signup" style=" font-weight:normal; font-size:13px;"><i class="icon-user"></i>Register</a></li>
                                  <li><a href="#" id="login-panel"><i class="icon-user"></i>Login Area</a></li>
+
                             <?php endif; ?>
                         </ul>
                     </nav>

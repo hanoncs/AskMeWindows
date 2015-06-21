@@ -131,7 +131,7 @@
                  // We record this attempt in the database
                  $now=time();
                  //$conn->Insert("INSERT INTO hanoncs_SecureLogin.Hanoncs_Hanoncs.loginattempts(userid, time)
-                 //                 VALUES ('$user_id', '$now')");
+                 //                VALUES ('$user_id', '$now')");
                  return false;
              }
          }
