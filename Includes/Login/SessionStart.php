@@ -122,6 +122,9 @@
                  // XSS protection as we might print this value
                  $username=preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
                  $_SESSION['username']=$username;
+
+                 //added here
+                 $_SESSION['userid']=$user_id;
                  $_SESSION['login_string']=hash('sha512', $password.$user_browser);
                  // Login successful.
                  return true;

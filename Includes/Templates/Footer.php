@@ -71,7 +71,7 @@
 <div class="go-up"><i class="icon-chevron-up"></i></div>
 
 <!-- js -->
-<script src="/js/jquery.min.js"></script>
+<!--//jquery was moved to the head for dev-->
 <script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="/js/jquery.easing.1.3.min.js"></script>
 <script src="/js/html5.js"></script>
@@ -89,6 +89,8 @@
 <script src="/js/jquery.bxslider.min.js"></script>
 <script src="/js/custom.js"></script>
 <!-- End js -->
+
+
 
 </body>
 </html>

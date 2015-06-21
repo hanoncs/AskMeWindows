@@ -47,7 +47,7 @@
 
         <!-- Favicons -->
         <link rel="shortcut icon" href="/images/favicon.png">
-
+        <script src="/js/jquery.min.js"></script>
         <script src="/JS/LoginForms.js" type="text/javascript"></script>
         <script src="/JS/sha512.js" type="text/javascript"></script>
 
@@ -226,7 +226,7 @@
 
                             <li><a href="/pages/Question/Questions.php">Questions</a>
                                 <ul>
-                                    <li class="ask_question"><a href="/pages/Question/AskAQuestion.php">Ask Question</a></li>
+                                    <li class="ask_question"><a href="/pages/Question/AskAQuestion/AskAQuestion.php">Ask Question</a></li>
                                     <li><a href="/pages/Question/Questions.php">View All Questions</a></li>
                                 </ul>
                             </li>
