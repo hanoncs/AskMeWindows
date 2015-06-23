@@ -1,14 +1,9 @@
 <?php
  $path=$_SERVER['DOCUMENT_ROOT'];
+ include_once $path.'/Includes/db.php';
  include_once $path.'/includes/login/SessionStart.php';
  sec_session_start();
- require $path.'/includes/mail/PHPMailerAutoload.php';
- include_once $path.'/includes/Functions.php';
-
-
-
-
- include_once $path.'/includes/Login/Register.inc.php';
+ include_once ROOT.'/includes/Login/Register.inc.php';
 
  //Create logged var, will be 'in' if logged in or 'out' if logged out.
  if(login_check($conn)==true) {
@@ -47,7 +42,7 @@
 
         <!-- Favicons -->
         <link rel="shortcut icon" href="/images/favicon.png">
-        <script src="/js/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
         <script src="/JS/LoginForms.js" type="text/javascript"></script>
         <script src="/JS/sha512.js" type="text/javascript"></script>
 

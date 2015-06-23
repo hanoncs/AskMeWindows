@@ -1,9 +1,9 @@
 <?php
  $path=$_SERVER['DOCUMENT_ROOT'];
  include $path.'/includes/Templates/Header.php';
- //include $path.'/includes/login/SessionStart.php';
- //$conn=new MSSQLConnectionClass('192.185.6.35', 'hanoncs_securelogin');
- $conn=dbConnect();
+ include $path.'/includes/login/SessionStart.php';
+ $conn=new MSSQLConnectionClass('192.185.6.35', 'hanoncs_securelogin');
+ //$conn=dbConnect();
 ?>
 
 

@@ -1,16 +1,18 @@
 <?php
 
+// if(!Defined('ROOT')) {
+//     define("ROOT", ".$_SERVER['ROOT'].");
+// }
 /////////////////////////////////
 //     SERVER SETTINGS     //
 ////////////////////////////////
 //Database Connection Config
  if(!defined('USERNAME')) {
      define("USERNAME", "hanoncs_hanoncs");
-     define("PASSWORD", "Hollydog1!");
-
+     define("PASSWORD", "Hollydog123!");
+     define("DATABASE", "192.185.6.35");
      //Server
      //define("SERVERNAME", "");
-     //define("DATABASE", "");
  }
 
 ///////////////////////////////
